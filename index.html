@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#07110f">
-  <meta name="description" content="Hachile Dev：何嘉乐的开发项目、工程原型与开源作品。">
+  <meta name="description" content="GPDdev 的开发项目、工程原型与开源作品。">
   <link rel="canonical" href="https://dev.hachile.org/">
-  <title>Hachile Dev · Projects by GPDdev</title>
+  <link rel="icon" type="image/png" href="/icon.png">
+  <title>GPDdev · Open-source Projects</title>
   <style>
     :root {
       color-scheme: dark;
@@ -100,6 +101,7 @@
       min-height: 500px;
       padding: clamp(4rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 7rem);
     }
+    .hero > *, .section-head > *, .project-card { min-width: 0; }
     .eyebrow {
       margin: 0 0 1rem;
       color: var(--accent);
@@ -109,11 +111,12 @@
       letter-spacing: .16em;
       text-transform: uppercase;
     }
+    .hero .eyebrow { font-size: 1.56rem; }
     h1 {
       max-width: 800px;
       margin: 0;
-      font-size: clamp(3.5rem, 10vw, 8.5rem);
-      line-height: .86;
+      font-size: clamp(2.6rem, 6vw, 5.25rem);
+      line-height: .94;
       letter-spacing: -.075em;
     }
     .hero-copy {
@@ -121,6 +124,7 @@
       margin: 1.6rem 0 0;
       color: var(--muted);
       font-size: clamp(1rem, 2vw, 1.2rem);
+      overflow-wrap: anywhere;
     }
     .hero-copy strong { color: var(--ink); }
 
@@ -283,7 +287,7 @@
     footer a { color: var(--accent); text-underline-offset: .22em; }
 
     @media (max-width: 760px) {
-      .topbar { align-items: flex-start; }
+      .topbar { align-items: flex-start; flex-wrap: wrap; }
       .topnav { flex-direction: column; align-items: flex-end; }
       .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 4rem; }
       .terminal { max-width: 420px; }
@@ -302,9 +306,9 @@
   <a class="skip-link" href="#projects">跳到项目列表</a>
 
   <header class="shell topbar">
-    <a class="brand" href="#top" aria-label="Hachile Dev 首页">
+    <a class="brand" href="#top" aria-label="GPDdev 首页">
       <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
-      <span>Hachile Dev</span>
+      <span>GPDdev</span>
     </a>
     <nav class="topnav" aria-label="站点导航">
       <a class="nav-link" href="https://github.com/GPDdev">GitHub</a>
@@ -325,7 +329,7 @@
 GPDdev
 
 <span class="prompt">$</span> projects --count
-7 public projects
+9 public projects
 
 <span class="prompt">$</span> focus
 Python · C++ · AI · Simulation</pre>
@@ -338,7 +342,7 @@ Python · C++ · AI · Simulation</pre>
           <p class="eyebrow">Selected work</p>
           <h2 id="projects-title">Projects</h2>
         </div>
-        <p>每张卡片都链接到公开仓库；可在线运行的 IASR 另提供 Web Demo。</p>
+        <p>每张卡片都链接到公开仓库；支持在线访问的项目同时提供网站入口。</p>
       </header>
 
       <div class="project-grid">
@@ -403,12 +407,34 @@ Python · C++ · AI · Simulation</pre>
           <ul class="tags" aria-label="内容类型"><li>Markdown</li><li>Study Notes</li><li>Open Materials</li><li>Tongji</li></ul>
           <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/GHCollege-Tongji-review-materials">查看 GitHub <span aria-hidden="true">→</span></a></div>
         </article>
+
+        <article class="project-card">
+          <div class="card-top"><span class="project-number">08</span><span class="project-kind">Digital Archive</span></div>
+          <h3>国豪野史</h3>
+          <p class="project-description">同济大学国豪书院的非官方网络志书，记录正史、校园野史与共同记忆，并为专题标注史料置信度和可核验来源。</p>
+          <ul class="tags" aria-label="技术栈"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Digital Archive</li></ul>
+          <div class="project-links">
+            <a class="project-link primary" href="https://ghc.hachile.org/">打开网站 <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/GPDdev/ghc.hachile.org">查看 GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top"><span class="project-number">09</span><span class="project-kind">Privacy-first Map</span></div>
+          <h3>Bronymap</h3>
+          <p class="project-description">隐私优先的小马迷地图。浏览器会先将选点压缩成 10 km 或 25 km 网格，服务器不接收、不保存用户的原始坐标。</p>
+          <ul class="tags" aria-label="技术栈"><li>Cloudflare Workers</li><li>D1</li><li>JavaScript</li><li>Privacy</li></ul>
+          <div class="project-links">
+            <a class="project-link primary" href="https://bronymap.hachile.org/">打开网站 <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/GPDdev/bronymap.org">查看 GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="shell">
-    <span>Hachile Dev · Built by GPDdev</span>
+    <span>GPDdev · Open-source projects</span>
     <a href="https://hachile.org/">返回 hachile.org →</a>
   </footer>
 </body>
