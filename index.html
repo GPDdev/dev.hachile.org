@@ -85,7 +85,10 @@
       padding: 9px 13px;
       border: 1px solid var(--line);
       border-radius: 999px;
+      background: transparent;
       color: var(--muted);
+      cursor: pointer;
+      font: inherit;
       font-size: .86rem;
       font-weight: 700;
       text-decoration: none;
@@ -116,8 +119,8 @@
       max-width: 800px;
       margin: 0;
       font-size: clamp(2.6rem, 6vw, 5.25rem);
-      line-height: .94;
-      letter-spacing: -.075em;
+      line-height: 1.05;
+      letter-spacing: -.035em;
     }
     .hero-copy {
       max-width: 690px;
@@ -303,7 +306,7 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#projects">跳到项目列表</a>
+  <a class="skip-link" href="#projects" data-i18n="skip">跳到项目列表</a>
 
   <header class="shell topbar">
     <a class="brand" href="#top" aria-label="GPDdev 首页">
@@ -312,7 +315,8 @@
     </a>
     <nav class="topnav" aria-label="站点导航">
       <a class="nav-link" href="https://github.com/GPDdev">GitHub</a>
-      <a class="nav-link" href="https://hachile.org/">返回 hachile.org</a>
+      <a class="nav-link" href="https://hachile.org/" data-i18n="back">返回 hachile.org</a>
+      <button class="nav-link" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
     </nav>
   </header>
 
@@ -321,7 +325,7 @@
       <div>
         <p class="eyebrow">Build · Simulate · Open source</p>
         <h1 id="hero-title">Ideas into working systems.</h1>
-        <p class="hero-copy">这里收录我的 <strong>开发项目、工程原型与开源工具</strong>，方向覆盖计算机视觉、科学仿真、桌面应用、算法课程设计与本地优先的数据分析。</p>
+        <p class="hero-copy" data-i18n="hero-copy">这里收录我的 <strong>开发项目、工程原型与开源工具</strong>，方向覆盖计算机视觉、科学仿真、桌面应用、算法课程设计与本地优先的数据分析。</p>
       </div>
       <div class="terminal" aria-label="项目概览">
         <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -342,7 +346,7 @@ Python · C++ · AI · Simulation</pre>
           <p class="eyebrow">Selected work</p>
           <h2 id="projects-title">Projects</h2>
         </div>
-        <p>每张卡片都链接到公开仓库；支持在线访问的项目同时提供网站入口。</p>
+        <p data-i18n="project-intro">每张卡片都链接到公开仓库；支持在线访问的项目同时提供网站入口。</p>
       </header>
 
       <div class="project-grid">
@@ -351,82 +355,82 @@ Python · C++ · AI · Simulation</pre>
             <span class="project-number">01 / FEATURED</span>
             <span class="project-kind">Computer Vision</span>
           </div>
-          <h3>IASR · 空中态势识别集成系统</h3>
-          <p class="project-description">面向低空经济场景的视频感知与预警原型：使用 YOLO 完成目标检测与跟踪，计算交通及能见度指标，将鸟群、入侵、低能见度和异常停车等现场信息转换为统一事件，并支持证据快照、联动派单与 CSV / JSON 导出。</p>
+          <h3 data-i18n="iasr-title">IASR · 空中态势识别集成系统</h3>
+          <p class="project-description" data-i18n="iasr-description">面向低空经济场景的视频感知与预警原型：使用 YOLO 完成目标检测与跟踪，计算交通及能见度指标，将鸟群、入侵、低能见度和异常停车等现场信息转换为统一事件，并支持证据快照、联动派单与 CSV / JSON 导出。</p>
           <ul class="tags" aria-label="技术栈"><li>Python</li><li>Streamlit</li><li>YOLOv8</li><li>OpenCV</li><li>Event Pipeline</li></ul>
           <div class="project-links">
-            <a class="project-link primary" href="https://iasrcloud.streamlit.app/">打开 Web Demo <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/GPDdev/IASR-Integrated-air-situation-recognition-system">查看 GitHub <span aria-hidden="true">→</span></a>
+            <a class="project-link primary" href="https://iasrcloud.streamlit.app/" data-i18n="open-demo">打开 Web Demo <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/GPDdev/IASR-Integrated-air-situation-recognition-system" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">02</span><span class="project-kind">Local-first AI</span></div>
-          <h3>QQ 画像簿 · Conversation Atlas</h3>
-          <p class="project-description">将 QQ Chat Exporter 记录整理成可搜索的本地用户画像，提供联系人聚合、互动统计、组合筛选与可选的大模型分析。数据存入本地 SQLite，只有主动调用 AI 时才向所选服务商发送样本。</p>
+          <h3 data-i18n="atlas-title">QQ 画像簿 · Conversation Atlas</h3>
+          <p class="project-description" data-i18n="atlas-description">将 QQ Chat Exporter 记录整理成可搜索的本地用户画像，提供联系人聚合、互动统计、组合筛选与可选的大模型分析。数据存入本地 SQLite，只有主动调用 AI 时才向所选服务商发送样本。</p>
           <ul class="tags" aria-label="技术栈"><li>Python</li><li>SQLite</li><li>PyWebView</li><li>LLM</li><li>Privacy</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/qq-chat-atlas">查看 GitHub <span aria-hidden="true">→</span></a></div>
+          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/qq-chat-atlas" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">03</span><span class="project-kind">Codex Skill</span></div>
           <h3>QQ Group Advisor</h3>
-          <p class="project-description">面向 QQ 社群规划、治理与运营的 Codex Skill。它能在授权数据范围内分析群聊与运营目标，判断应该新建、改造、合并还是暂缓建群，并生成定位、治理、宣传和冷启动方案。</p>
+          <p class="project-description" data-i18n="advisor-description">面向 QQ 社群规划、治理与运营的 Codex Skill。它能在授权数据范围内分析群聊与运营目标，判断应该新建、改造、合并还是暂缓建群，并生成定位、治理、宣传和冷启动方案。</p>
           <ul class="tags" aria-label="技术栈"><li>Python</li><li>Codex Skill</li><li>QQ</li><li>NapCat</li><li>Data Privacy</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/qq-group-advisor">查看 GitHub <span aria-hidden="true">→</span></a></div>
+          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/qq-group-advisor" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">04</span><span class="project-kind">Scientific Computing</span></div>
           <h3>Lithium Dendrite Cellular Automata Simulator</h3>
-          <p class="project-description">基于二维元胞自动机的锂金属电池枝晶生长简化模型，可调节过电位、扩散能力、SEI 均匀性和各向异性，自动导出形貌图、动态 GIF、生长指标与 CSV 数据。</p>
+          <p class="project-description" data-i18n="lithium-description">基于二维元胞自动机的锂金属电池枝晶生长简化模型，可调节过电位、扩散能力、SEI 均匀性和各向异性，自动导出形貌图、动态 GIF、生长指标与 CSV 数据。</p>
           <ul class="tags" aria-label="技术栈"><li>Python</li><li>Cellular Automata</li><li>NumPy</li><li>Pandas</li><li>Matplotlib</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Lithium-Dendrite-Cellular-Automata-Simulator">查看 GitHub <span aria-hidden="true">→</span></a></div>
+          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Lithium-Dendrite-Cellular-Automata-Simulator" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">05</span><span class="project-kind">Web Simulation</span></div>
           <h3>Mars Base Thermal Simulator</h3>
-          <p class="project-description">火星基地隔热墙热传导交互仿真。通过元胞自动机展示不同材料组合、热源位置、热桥和裂缝缺陷对温度场、热流密度、有效热阻与保温效果的影响。</p>
+          <p class="project-description" data-i18n="mars-description">火星基地隔热墙热传导交互仿真。通过元胞自动机展示不同材料组合、热源位置、热桥和裂缝缺陷对温度场、热流密度、有效热阻与保温效果的影响。</p>
           <ul class="tags" aria-label="技术栈"><li>HTML</li><li>JavaScript</li><li>Heat Transfer</li><li>Cellular Automata</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Mars-Base-Thermal-Simulator-Web">查看 GitHub <span aria-hidden="true">→</span></a></div>
+          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Mars-Base-Thermal-Simulator-Web" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">06</span><span class="project-kind">Desktop App</span></div>
           <h3>Shanghai Metro Planner</h3>
-          <p class="project-description">基于 C++ / Qt Widgets 的上海地铁换乘指南，使用图结构和改进 Dijkstra 算法查询优先最少换乘、其次最少站点的路线，支持线路编辑、换乘说明和路径高亮。</p>
+          <p class="project-description" data-i18n="metro-description">基于 C++ / Qt Widgets 的上海地铁换乘指南，使用图结构和改进 Dijkstra 算法查询优先最少换乘、其次最少站点的路线，支持线路编辑、换乘说明和路径高亮。</p>
           <ul class="tags" aria-label="技术栈"><li>C++17</li><li>Qt Widgets</li><li>CMake</li><li>Dijkstra</li><li>Graph</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Shanghai-Metro-Planner">查看 GitHub <span aria-hidden="true">→</span></a></div>
+          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Shanghai-Metro-Planner" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">07</span><span class="project-kind">Open Learning</span></div>
           <h3>GHCollege Tongji Review Materials</h3>
-          <p class="project-description">同济大学国豪书院课程复习资料库，整理课程重点、知识框架、课堂笔记、复习提纲与易错点。资料仅供学习交流，使用时应结合教材、课堂内容及教师要求自行核对。</p>
+          <p class="project-description" data-i18n="materials-description">同济大学国豪书院课程复习资料库，整理课程重点、知识框架、课堂笔记、复习提纲与易错点。资料仅供学习交流，使用时应结合教材、课堂内容及教师要求自行核对。</p>
           <ul class="tags" aria-label="内容类型"><li>Markdown</li><li>Study Notes</li><li>Open Materials</li><li>Tongji</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/GHCollege-Tongji-review-materials">查看 GitHub <span aria-hidden="true">→</span></a></div>
+          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/GHCollege-Tongji-review-materials" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">08</span><span class="project-kind">Digital Archive</span></div>
-          <h3>国豪野史</h3>
-          <p class="project-description">同济大学国豪书院的非官方网络志书，记录正史、校园野史与共同记忆，并为专题标注史料置信度和可核验来源。</p>
+          <h3 data-i18n="ghc-title">国豪野史</h3>
+          <p class="project-description" data-i18n="ghc-description">同济大学国豪书院的非官方网络志书，记录正史、校园野史与共同记忆，并为专题标注史料置信度和可核验来源。</p>
           <ul class="tags" aria-label="技术栈"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Digital Archive</li></ul>
           <div class="project-links">
-            <a class="project-link primary" href="https://ghc.hachile.org/">打开网站 <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/GPDdev/ghc.hachile.org">查看 GitHub <span aria-hidden="true">→</span></a>
+            <a class="project-link primary" href="https://ghc.hachile.org/" data-i18n="open-site">打开网站 <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/GPDdev/ghc.hachile.org" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a>
           </div>
         </article>
 
         <article class="project-card">
           <div class="card-top"><span class="project-number">09</span><span class="project-kind">Privacy-first Map</span></div>
           <h3>Bronymap</h3>
-          <p class="project-description">隐私优先的小马迷地图。浏览器会先将选点压缩成 10 km 或 25 km 网格，服务器不接收、不保存用户的原始坐标。</p>
+          <p class="project-description" data-i18n="bronymap-description">隐私优先的小马迷地图。浏览器会先将选点压缩成 10 km 或 25 km 网格，服务器不接收、不保存用户的原始坐标。</p>
           <ul class="tags" aria-label="技术栈"><li>Cloudflare Workers</li><li>D1</li><li>JavaScript</li><li>Privacy</li></ul>
           <div class="project-links">
-            <a class="project-link primary" href="https://bronymap.hachile.org/">打开网站 <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/GPDdev/bronymap.org">查看 GitHub <span aria-hidden="true">→</span></a>
+            <a class="project-link primary" href="https://bronymap.hachile.org/" data-i18n="open-site">打开网站 <span aria-hidden="true">↗</span></a>
+            <a class="project-link" href="https://github.com/GPDdev/bronymap.org" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a>
           </div>
         </article>
       </div>
@@ -435,7 +439,53 @@ Python · C++ · AI · Simulation</pre>
 
   <footer class="shell">
     <span>GPDdev · Open-source projects</span>
-    <a href="https://hachile.org/">返回 hachile.org →</a>
+    <a href="https://hachile.org/" data-i18n="back-footer">返回 hachile.org →</a>
   </footer>
+  <script>
+    const english = {
+      skip: "Skip to projects",
+      back: "Back to hachile.org",
+      "hero-copy": "A collection of my <strong>development projects, engineering prototypes, and open-source tools</strong>, spanning computer vision, scientific simulation, desktop applications, algorithm design, and local-first data analysis.",
+      "project-intro": "Every card links to a public repository; projects with an online version also include a live site.",
+      "iasr-title": "IASR · Integrated Air Situation Recognition System",
+      "iasr-description": "A video perception and warning prototype for low-altitude scenarios. It uses YOLO for object detection and tracking, derives traffic and visibility metrics, converts bird flocks, intrusions, low visibility, and abnormal parking into unified events, and supports evidence snapshots, dispatch workflows, and CSV / JSON export.",
+      "atlas-title": "QQ Conversation Atlas",
+      "atlas-description": "Turns QQ Chat Exporter records into searchable local profiles with contact aggregation, interaction statistics, combined filters, and optional LLM analysis. Data stays in local SQLite; samples are sent to a selected AI provider only when analysis is explicitly requested.",
+      "advisor-description": "A Codex Skill for planning, governing, and operating QQ communities. Within authorized data, it evaluates group activity and operational goals, recommends whether to create, reshape, merge, or postpone a group, and produces positioning, governance, promotion, and launch plans.",
+      "lithium-description": "A simplified two-dimensional cellular-automata model of lithium dendrite growth. It exposes overpotential, diffusion, SEI uniformity, and anisotropy controls, then exports morphology images, animated GIFs, growth metrics, and CSV data.",
+      "mars-description": "An interactive heat-transfer simulation for insulated Mars-base walls. Cellular automata show how material combinations, heat-source positions, thermal bridges, and cracks affect temperature fields, heat flux, effective thermal resistance, and insulation performance.",
+      "metro-description": "A C++ / Qt Widgets route planner for the Shanghai Metro. Its graph model and modified Dijkstra algorithm prioritize fewer transfers and then fewer stops, with line editing, transfer guidance, and route highlighting.",
+      "materials-description": "An open collection of review materials for Tongji University's Guohao College, including key concepts, knowledge maps, class notes, review outlines, and common mistakes. Materials are for study and should be checked against course texts, lectures, and instructor requirements.",
+      "ghc-title": "Unofficial GHC Chronicle",
+      "ghc-description": "An unofficial digital chronicle of Tongji University's Guohao College, documenting institutional history, campus lore, and shared memories while labeling source confidence and providing verifiable references.",
+      "bronymap-description": "A privacy-first map for My Little Pony fans. The browser reduces selected locations to 10 km or 25 km grid cells before submission, so the server never receives or stores raw coordinates.",
+      "open-demo": "Open Web Demo <span aria-hidden=\"true\">↗</span>",
+      github: "View GitHub <span aria-hidden=\"true\">→</span>",
+      "open-site": "Open site <span aria-hidden=\"true\">↗</span>",
+      "back-footer": "Back to hachile.org →"
+    };
+
+    const toggle = document.querySelector("#lang-toggle");
+    const translated = [...document.querySelectorAll("[data-i18n]")];
+    const chinese = new Map(translated.map((node) => [node, node.innerHTML]));
+    console.assert(translated.every((node) => english[node.dataset.i18n]), "Missing English translation");
+
+    function setLanguage(language) {
+      const isEnglish = language === "en";
+      document.documentElement.lang = isEnglish ? "en" : "zh-CN";
+      translated.forEach((node) => {
+        node.innerHTML = isEnglish ? english[node.dataset.i18n] : chinese.get(node);
+      });
+      toggle.textContent = isEnglish ? "中文" : "EN";
+      toggle.setAttribute("aria-label", isEnglish ? "切换为中文" : "Switch to English");
+      toggle.setAttribute("aria-pressed", String(isEnglish));
+      try { localStorage.setItem("dev-language", language); } catch {}
+    }
+
+    let savedLanguage = "zh-CN";
+    try { savedLanguage = localStorage.getItem("dev-language") || savedLanguage; } catch {}
+    setLanguage(savedLanguage);
+    toggle.addEventListener("click", () => setLanguage(document.documentElement.lang === "en" ? "zh-CN" : "en"));
+  </script>
 </body>
 </html>
