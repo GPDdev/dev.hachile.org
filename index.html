@@ -3,516 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07110f">
-  <meta name="description" content="GPDdev 的开发项目、工程原型与开源作品。">
+  <meta name="theme-color" content="#f4f2ec">
+  <meta name="description" content="GPDdev 的软件、工具与实验。浏览项目截图、用途介绍与源代码。">
+  <meta property="og:title" content="GPDdev | Projects">
+  <meta property="og:description" content="Ideas into working systems. 软件、工具与实验。">
+  <meta property="og:url" content="https://dev.hachile.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://dev.hachile.org/icon.png">
   <link rel="canonical" href="https://dev.hachile.org/">
-  <link rel="icon" type="image/png" href="/icon.png">
-  <title>GPDdev · Open-source Projects</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #07110f;
-      --panel: #0d1a17;
-      --panel-strong: #11231f;
-      --ink: #edf8f3;
-      --muted: #9bb0a7;
-      --line: rgba(205, 255, 230, .13);
-      --accent: #7cf2bd;
-      --accent-strong: #35d894;
-      --accent-soft: rgba(87, 232, 168, .12);
-      --radius: 24px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 12% 2%, rgba(39, 191, 132, .18), transparent 27rem),
-        radial-gradient(circle at 90% 35%, rgba(62, 135, 255, .09), transparent 30rem),
-        var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
-      line-height: 1.65;
-    }
-
-    a { color: inherit; }
-    .skip-link {
-      position: fixed;
-      left: 1rem;
-      top: -5rem;
-      z-index: 10;
-      padding: .65rem 1rem;
-      background: var(--accent);
-      color: #04100c;
-    }
-    .skip-link:focus { top: 1rem; }
-
-    .shell {
-      width: min(1160px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 24px 0;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 850;
-      letter-spacing: -.02em;
-      text-decoration: none;
-    }
-    .brand-mark {
-      display: grid;
-      width: 34px;
-      height: 34px;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      font-size: .82rem;
-    }
-    .topnav { display: flex; gap: 9px; }
-    .nav-link {
-      padding: 9px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      font: inherit;
-      font-size: .86rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: border-color .18s ease, color .18s ease, background .18s ease;
-    }
-    .nav-link:hover { border-color: rgba(124, 242, 189, .5); color: var(--ink); background: var(--accent-soft); }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr);
-      gap: clamp(2rem, 7vw, 6rem);
-      align-items: end;
-      min-height: 500px;
-      padding: clamp(4rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 7rem);
-    }
-    .hero > *, .section-head > *, .project-card { min-width: 0; }
-    .eyebrow {
-      margin: 0 0 1rem;
-      color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    .hero .eyebrow { font-size: 1.56rem; }
-    h1 {
-      max-width: 800px;
-      margin: 0;
-      font-size: clamp(2.6rem, 6vw, 5.25rem);
-      line-height: 1.05;
-      letter-spacing: -.035em;
-    }
-    .hero-copy {
-      max-width: 690px;
-      margin: 1.6rem 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      overflow-wrap: anywhere;
-    }
-    .hero-copy strong { color: var(--ink); }
-
-    .terminal {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(6, 16, 13, .74);
-      box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
-      overflow: hidden;
-    }
-    .terminal-bar {
-      display: flex;
-      gap: 7px;
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-    }
-    .terminal-bar i { width: 8px; height: 8px; border-radius: 50%; background: #476158; }
-    .terminal-body {
-      margin: 0;
-      padding: 22px;
-      color: #b8c9c1;
-      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      font-size: .82rem;
-      line-height: 1.9;
-      white-space: pre-wrap;
-    }
-    .prompt { color: var(--accent); }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 0 0 28px;
-      border-bottom: 1px solid var(--line);
-    }
-    .section-head h2 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 3.8rem);
-      line-height: 1;
-      letter-spacing: -.055em;
-    }
-    .section-head p { max-width: 470px; margin: 0; color: var(--muted); }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 18px;
-      padding: 28px 0 72px;
-    }
-    .project-card {
-      position: relative;
-      grid-column: span 6;
-      display: flex;
-      min-height: 360px;
-      flex-direction: column;
-      padding: clamp(1.4rem, 3vw, 2.1rem);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, .025), transparent 50%),
-        var(--panel);
-      overflow: hidden;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-    .project-card::after {
-      content: "";
-      position: absolute;
-      right: -80px;
-      bottom: -110px;
-      width: 230px;
-      height: 230px;
-      border: 1px solid rgba(124, 242, 189, .12);
-      border-radius: 50%;
-      background: rgba(124, 242, 189, .035);
-      pointer-events: none;
-    }
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(124, 242, 189, .42);
-      background-color: var(--panel-strong);
-    }
-    .project-card.featured {
-      grid-column: span 12;
-      min-height: 390px;
-      background:
-        linear-gradient(120deg, rgba(42, 208, 141, .13), transparent 56%),
-        var(--panel-strong);
-    }
-    .project-card.featured .project-description { max-width: 760px; }
-    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .project-number {
-      color: var(--accent);
-      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-    }
-    .project-kind {
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: .72rem;
-      font-weight: 750;
-      text-transform: uppercase;
-    }
-    .project-card h3 {
-      max-width: 760px;
-      margin: 2.1rem 0 .8rem;
-      font-size: clamp(1.55rem, 3vw, 2.35rem);
-      line-height: 1.08;
-      letter-spacing: -.04em;
-      overflow-wrap: anywhere;
-    }
-    .project-description { margin: 0; color: var(--muted); }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 1.35rem 0 0; padding: 0; list-style: none; }
-    .tags li {
-      padding: 5px 9px;
-      border-radius: 8px;
-      background: var(--accent-soft);
-      color: #baf7db;
-      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      font-size: .72rem;
-    }
-    .project-links {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: auto;
-      padding-top: 2rem;
-    }
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      font-size: .82rem;
-      font-weight: 800;
-      text-decoration: none;
-    }
-    .project-link:hover { border-color: var(--accent); }
-    .project-link.primary { background: var(--accent); color: #04100c; border-color: var(--accent); }
-    .project-link.primary:hover { background: #a0ffd4; }
-
-    footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 28px 0 42px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .85rem;
-    }
-    footer a { color: var(--accent); text-underline-offset: .22em; }
-
-    @media (max-width: 760px) {
-      .topbar { align-items: flex-start; flex-wrap: wrap; }
-      .topnav { flex-direction: column; align-items: flex-end; }
-      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 4rem; }
-      .terminal { max-width: 420px; }
-      .section-head { align-items: flex-start; flex-direction: column; }
-      .project-card, .project-card.featured { grid-column: span 12; min-height: 0; }
-      footer { align-items: flex-start; flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .project-card, .nav-link { transition: none; }
-    }
-  </style>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+  <title>GPDdev | Projects</title>
 </head>
 <body>
-  <a class="skip-link" href="#projects" data-i18n="skip">跳到项目列表</a>
-
+  <a class="skip-link" href="#projects" data-en="Skip to projects">跳至项目</a>
   <header class="shell topbar">
-    <a class="brand" href="#top" aria-label="GPDdev 首页">
-      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
-      <span>GPDdev</span>
-    </a>
-    <nav class="topnav" aria-label="站点导航">
-      <a class="nav-link" href="https://github.com/GPDdev">GitHub</a>
-      <a class="nav-link" href="https://hachile.org/" data-i18n="back">返回 hachile.org</a>
-      <button class="nav-link" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+    <a class="brand" href="#top" aria-label="GPDdev"><img src="icon.png" width="32" height="32" alt=""><span>GPDdev</span><span class="brand-caption">/ dev</span></a>
+    <nav class="topnav" aria-label="Navigation">
+      <a href="https://github.com/GPDdev">GitHub <span aria-hidden="true">↗</span></a>
+      <a href="https://hachile.org/" data-en="Back to hachile.org">返回 hachile.org</a>
+      <button id="lang-toggle" type="button" aria-label="Switch to English" aria-pressed="false">EN</button>
     </nav>
   </header>
-
   <main id="top">
     <section class="shell hero" aria-labelledby="hero-title">
-      <div>
-        <p class="eyebrow">Build · Simulate · Open source</p>
-        <h1 id="hero-title">Ideas into working systems.</h1>
-        <p class="hero-copy" data-i18n="hero-copy">这里收录我的 <strong>开发项目、工程原型与开源工具</strong>，方向覆盖计算机视觉、科学仿真、桌面应用、算法课程设计与本地优先的数据分析。</p>
+      <div class="hero-heading">
+        <p class="eyebrow">Build / Simulate / Open source</p>
+        <h1 id="hero-title">Ideas into<br><em>working systems.</em></h1>
       </div>
-      <div class="terminal" aria-label="项目概览">
-        <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <pre class="terminal-body"><span class="prompt">$</span> whoami
-GPDdev
-
-<span class="prompt">$</span> projects --count
-12 public projects
-
-<span class="prompt">$</span> focus
-Python · C++ · AI · Simulation</pre>
+      <div class="hero-aside">
+        <span class="asterisk" aria-hidden="true">✳</span>
+        <p data-en="Software for everyday life. Tools for exploration. Experiments made real.">为日常做软件，<br class="zh-break">为探索做工具，<br class="zh-break">把想法变成可以使用的东西。</p>
+        <a class="browse-link" href="#projects"><span data-en="Explore the projects">浏览我的项目</span><span aria-hidden="true">↓</span></a>
       </div>
     </section>
-
     <section class="shell" id="projects" aria-labelledby="projects-title">
       <header class="section-head">
-        <div>
-          <p class="eyebrow">Selected work</p>
-          <h2 id="projects-title">Projects</h2>
-        </div>
-        <p data-i18n="project-intro">每张卡片都链接到公开仓库；支持在线访问的项目同时提供网站入口。</p>
+        <div class="section-title"><span class="index-label">01 / INDEX</span><h2 id="projects-title" data-en="Projects">项目一览</h2><span class="count"><!-- count:start -->13<!-- count:end --></span></div>
+        <div class="sort-note"><span data-en="Sorted by GitHub stars ↓">按 GitHub Star 排序 ↓</span><small><span data-en="Checked ">核对于 </span><!-- updated:start --><time datetime="2026-11-21T17:50:34.609Z">2026-11-22</time><!-- updated:end --></small></div>
       </header>
-
       <div class="project-grid">
-        <article class="project-card featured">
-          <div class="card-top">
-            <span class="project-number">01 / FEATURED</span>
-            <span class="project-kind">Computer Vision</span>
-          </div>
-          <h3 data-i18n="iasr-title">IASR · 空中态势识别集成系统</h3>
-          <p class="project-description" data-i18n="iasr-description">面向低空经济场景的视频感知与预警原型：使用 YOLO 完成目标检测与跟踪，计算交通及能见度指标，将鸟群、入侵、低能见度和异常停车等现场信息转换为统一事件，并支持证据快照、联动派单与 CSV / JSON 导出。</p>
-          <ul class="tags" aria-label="技术栈"><li>Python</li><li>Streamlit</li><li>YOLOv8</li><li>OpenCV</li><li>Event Pipeline</li></ul>
-          <div class="project-links">
-            <a class="project-link primary" href="https://iasrcloud.streamlit.app/" data-i18n="open-demo">打开 Web Demo <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/GPDdev/IASR-Integrated-air-situation-recognition-system" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">02</span><span class="project-kind">Local-first AI</span></div>
-          <h3 data-i18n="atlas-title">QQ 画像簿 · Conversation Atlas</h3>
-          <p class="project-description" data-i18n="atlas-description">将 QQ Chat Exporter 记录整理成可搜索的本地用户画像，提供联系人聚合、互动统计、组合筛选与可选的大模型分析。数据存入本地 SQLite，只有主动调用 AI 时才向所选服务商发送样本。</p>
-          <ul class="tags" aria-label="技术栈"><li>Python</li><li>SQLite</li><li>PyWebView</li><li>LLM</li><li>Privacy</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/qq-chat-atlas" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">03</span><span class="project-kind">Codex Skill</span></div>
-          <h3>QQ Group Advisor</h3>
-          <p class="project-description" data-i18n="advisor-description">面向 QQ 社群规划、治理与运营的 Codex Skill。它能在授权数据范围内分析群聊与运营目标，判断应该新建、改造、合并还是暂缓建群，并生成定位、治理、宣传和冷启动方案。</p>
-          <ul class="tags" aria-label="技术栈"><li>Python</li><li>Codex Skill</li><li>QQ</li><li>NapCat</li><li>Data Privacy</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/qq-group-advisor" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">04</span><span class="project-kind">Scientific Computing</span></div>
-          <h3>Lithium Dendrite Cellular Automata Simulator</h3>
-          <p class="project-description" data-i18n="lithium-description">基于二维元胞自动机的锂金属电池枝晶生长简化模型，可调节过电位、扩散能力、SEI 均匀性和各向异性，自动导出形貌图、动态 GIF、生长指标与 CSV 数据。</p>
-          <ul class="tags" aria-label="技术栈"><li>Python</li><li>Cellular Automata</li><li>NumPy</li><li>Pandas</li><li>Matplotlib</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Lithium-Dendrite-Cellular-Automata-Simulator" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">05</span><span class="project-kind">Web Simulation</span></div>
-          <h3>Mars Base Thermal Simulator</h3>
-          <p class="project-description" data-i18n="mars-description">火星基地隔热墙热传导交互仿真。通过元胞自动机展示不同材料组合、热源位置、热桥和裂缝缺陷对温度场、热流密度、有效热阻与保温效果的影响。</p>
-          <ul class="tags" aria-label="技术栈"><li>HTML</li><li>JavaScript</li><li>Heat Transfer</li><li>Cellular Automata</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Mars-Base-Thermal-Simulator-Web" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">06</span><span class="project-kind">Desktop App</span></div>
-          <h3>Shanghai Metro Planner</h3>
-          <p class="project-description" data-i18n="metro-description">基于 C++ / Qt Widgets 的上海地铁换乘指南，使用图结构和改进 Dijkstra 算法查询优先最少换乘、其次最少站点的路线，支持线路编辑、换乘说明和路径高亮。</p>
-          <ul class="tags" aria-label="技术栈"><li>C++17</li><li>Qt Widgets</li><li>CMake</li><li>Dijkstra</li><li>Graph</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Shanghai-Metro-Planner" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">07</span><span class="project-kind">Open Learning</span></div>
-          <h3>GHCollege Tongji Review Materials</h3>
-          <p class="project-description" data-i18n="materials-description">同济大学国豪书院课程复习资料库，整理课程重点、知识框架、课堂笔记、复习提纲与易错点。资料仅供学习交流，使用时应结合教材、课堂内容及教师要求自行核对。</p>
-          <ul class="tags" aria-label="内容类型"><li>Markdown</li><li>Study Notes</li><li>Open Materials</li><li>Tongji</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/GHCollege-Tongji-review-materials" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">08</span><span class="project-kind">Digital Archive</span></div>
-          <h3 data-i18n="ghc-title">国豪野史</h3>
-          <p class="project-description" data-i18n="ghc-description">同济大学国豪书院的非官方网络志书，记录正史、校园野史与共同记忆，并为专题标注史料置信度和可核验来源。</p>
-          <ul class="tags" aria-label="技术栈"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Digital Archive</li></ul>
-          <div class="project-links">
-            <a class="project-link primary" href="https://ghc.hachile.org/" data-i18n="open-site">打开网站 <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/GPDdev/ghc.hachile.org" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">09</span><span class="project-kind">Privacy-first Map</span></div>
-          <h3>Bronymap</h3>
-          <p class="project-description" data-i18n="bronymap-description">隐私优先的小马迷地图。浏览器会先将选点压缩成 10 km 或 25 km 网格，服务器不接收、不保存用户的原始坐标。</p>
-          <ul class="tags" aria-label="技术栈"><li>Cloudflare Workers</li><li>D1</li><li>JavaScript</li><li>Privacy</li></ul>
-          <div class="project-links">
-            <a class="project-link primary" href="https://bronymap.hachile.org/" data-i18n="open-site">打开网站 <span aria-hidden="true">↗</span></a>
-            <a class="project-link" href="https://github.com/GPDdev/bronymap.org" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">10</span><span class="project-kind">Android App</span></div>
-          <h3>StrideTune（随步）</h3>
-          <p class="project-description" data-i18n="stridetune-description">面向跑步场景的 Android 音乐播放器，支持单指滑动调速、本地音频和网易云公开歌单导入。使用 Java 界面与 Media3 音频引擎。</p>
-          <ul class="tags" aria-label="技术栈"><li>Android</li><li>Java</li><li>Media3</li><li>Audio</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/StrideTune" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">11</span><span class="project-kind">Desktop App</span></div>
-          <h3>LiveCue（临场）</h3>
-          <p class="project-description" data-i18n="livecue-description">Windows 桌面面试表达助手：将系统声音和可选麦克风转为文字，结合用户提供的简历与岗位资料生成回答要点，并可选观察会议画面。使用用户自行配置的 API。</p>
-          <ul class="tags" aria-label="技术栈"><li>Windows</li><li>Electron</li><li>Speech to Text</li><li>LLM</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/LiveCue" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
-
-        <article class="project-card">
-          <div class="card-top"><span class="project-number">12</span><span class="project-kind">Repository</span></div>
-          <h3>Tongji TapLoop</h3>
-          <p class="project-description" data-i18n="taploop-description">公开仓库已创建，目前尚未上传项目文件或说明。后续内容请以仓库为准。</p>
-          <ul class="tags" aria-label="项目状态"><li>Tongji</li><li>Awaiting content</li></ul>
-          <div class="project-links"><a class="project-link" href="https://github.com/GPDdev/Tongji-TapLoop" data-i18n="github">查看 GitHub <span aria-hidden="true">→</span></a></div>
-        </article>
+<!-- projects:start -->
+<article class="project-card theme-metro" data-repo="Shanghai-Metro-Planner" data-stars="2">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><svg viewBox="0 0 600 330"><g fill="none" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path stroke="#ca4d34" d="M-30 75H175L300 200H630"/><path stroke="#395a4a" d="M60 370V240L240 60H500"/><path stroke="#d5a448" d="M-30 285H180L345 120H630"/></g><g fill="#fbf5e8" stroke="#293e35" stroke-width="4"><circle cx="155" cy="75" r="9"/><circle cx="222" cy="122" r="12"/><circle cx="300" cy="200" r="12"/><circle cx="440" cy="200" r="9"/><circle cx="385" cy="60" r="9"/><circle cx="60" cy="285" r="12"/><circle cx="470" cy="120" r="9"/></g></svg><span class="art-title">SHANGHAI<br>METRO</span><span class="art-note">Routes, connected.</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">01</span><span  data-en="Route planning">路线规划</span><span class="stars" aria-label="2 GitHub stars"><span aria-hidden="true">☆</span> 2</span></div>
+<h3  data-en="Shanghai Metro Planner">上海地铁换乘指南</h3><p class="project-description" data-en="A Shanghai Metro planner that prioritizes fewer transfers, then fewer stops. Includes network editing and highlighted routes.">少换乘，再少走几站。用图结构和 Dijkstra 算法规划上海地铁路线，支持线路编辑与路径高亮。</p><ul class="tags" aria-label="Technologies"><li>C++</li><li>Qt</li><li>Dijkstra</li></ul><div class="project-links"><a href="https://github.com/GPDdev/Shanghai-Metro-Planner">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-iasr" data-repo="IASR-Integrated-air-situation-recognition-system" data-stars="1">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><div class="radar"><i></i><i></i><i></i><b class="blip b1"></b><b class="blip b2"></b><b class="blip b3"></b></div><span class="art-title">IASR</span><span class="art-note">Perception → events → evidence</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">02</span><span  data-en="Computer vision">计算机视觉</span><span class="stars" aria-label="1 GitHub stars"><span aria-hidden="true">☆</span> 1</span></div>
+<h3  data-en="IASR">IASR 空中态势识别</h3><p class="project-description" data-en="Video detection and tracking for traffic, visibility, and unusual events. Turns observations into traceable events and evidence.">从视频中的目标检测与跟踪，到交通、能见度与异常事件分析。将现场信息整理成可追溯的事件与证据。</p><ul class="tags" aria-label="Technologies"><li>Python</li><li>YOLO</li><li>Streamlit</li></ul><div class="project-links"><a href="https://github.com/GPDdev/IASR-Integrated-air-situation-recognition-system">GitHub <span aria-hidden="true">↗</span></a><a href="https://iasrcloud.streamlit.app/"><span  data-en="Open site">访问网站</span> <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-bronymap" data-repo="bronymap.org" data-stars="0">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><div class="map-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="art-title">Near.<br>Never exact.</span><span class="art-note">10 km / 25 km</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">03</span><span  data-en="Community map">社群地图</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="Bronymap">Bronymap</h3><p class="project-description" data-en="Find fellow pony fans without sharing precise locations. The browser converts locations into 10 km or 25 km grid cells before submission.">在地图上发现同好，同时保留距离。位置在浏览器内转为 10 km 或 25 km 网格，服务器不接收原始坐标。</p><ul class="tags" aria-label="Technologies"><li>Cloudflare Workers</li><li>D1</li><li>Privacy</li></ul><div class="project-links"><a href="https://github.com/GPDdev/bronymap.org">GitHub <span aria-hidden="true">↗</span></a><a href="https://bronymap.hachile.org/"><span  data-en="Open site">访问网站</span> <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-ghc" data-repo="ghc.hachile.org" data-stars="0">
+  <div class="project-art has-image"><img src="assets/projects/ghc.png" alt="国豪野史仓库中的校园建筑横幅" data-en-alt="Campus architecture banner from the GHC Chronicle repository" loading="lazy" decoding="async"><a class="image-credit" href="https://github.com/GPDdev/ghc.hachile.org/blob/main/docs/banner_3.png"><span  data-en="Project artwork ↗">项目原图 ↗</span></a></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">04</span><span  data-en="Digital archive">数字档案</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="Unofficial GHC Chronicle">国豪野史</h3><p class="project-description" data-en="Campus stories and shared memories from Guohao College. An evolving unofficial chronicle with sources and confidence labels.">记录国豪书院的校园故事与共同记忆。一部持续生长的非官方网络志书，附有来源与史料置信度。</p><ul class="tags" aria-label="Technologies"><li>Web</li><li>Archive</li><li>Tongji</li></ul><div class="project-links"><a href="https://github.com/GPDdev/ghc.hachile.org">GitHub <span aria-hidden="true">↗</span></a><a href="https://ghc.hachile.org/"><span  data-en="Open site">访问网站</span> <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-jinke" data-repo="jinke" data-stars="0">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><div class="journal-sheet"><span>今刻</span><p>把这一刻，<br>留给自己。</p><i></i><i></i><i></i></div><span class="art-note">A little space for now.</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">05</span><span  data-en="Personal journal">随手记录</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="Jinke">今刻</h3><p class="project-description" data-en="An Android journal that opens ready to write. Saves drafts locally in SQLite and exports entries as TXT, Markdown, or JSON.">打开就能写的 Android 心情记录本。自动保存草稿，文字留在本机 SQLite，支持导出 TXT、Markdown 与 JSON。</p><ul class="tags" aria-label="Technologies"><li>Android</li><li>Java</li><li>SQLite</li></ul><div class="project-links"><a href="https://github.com/GPDdev/jinke">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-livecue" data-repo="LiveCue" data-stars="0">
+  <div class="project-art has-image"><img src="assets/projects/livecue.png" alt="LiveCue README 工作台截图，使用本地示例数据" data-en-alt="LiveCue README workspace screenshot with local sample data" loading="lazy" decoding="async"><a class="image-credit" href="https://github.com/GPDdev/LiveCue/blob/main/docs/images/workspace.png"><span  data-en="README screenshot ↗">README 截图 ↗</span></a></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">06</span><span  data-en="Interview assistant">表达辅助</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="LiveCue">LiveCue 临场</h3><p class="project-description" data-en="Turns meeting audio into transcripts and answer points grounded in your resume and role. Optional screen context; bring your own AI API.">结合简历与岗位资料，把会议语音转为文字和回答要点。支持可选画面观察，使用你自己配置的 AI API。</p><ul class="tags" aria-label="Technologies"><li>Windows</li><li>Electron</li><li>Speech to text</li></ul><div class="project-links"><a href="https://github.com/GPDdev/LiveCue">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-mentor" data-repo="mentor-match" data-stars="0">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><div class="match-path"><span>YOU</span><i></i><span>RESEARCH</span><i></i><span>MENTOR</span></div><span class="art-title">Find your<br>next chapter.</span><span class="art-note">Evidence before inference.</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">07</span><span  data-en="Research matching">研究机会匹配</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="Mentor Match">Mentor Match</h3><p class="project-description" data-en="Find and compare supervisors, labs, and research opportunities using verifiable evidence. Prepare application materials and monitor saved shortlists.">基于可核验证据寻找导师、实验室与研究机会。支持比较候选、生成申请准备材料，以及跟进已保存的名单。</p><ul class="tags" aria-label="Technologies"><li>Agent Skill</li><li>Python</li><li>Research</li></ul><div class="project-links"><a href="https://github.com/GPDdev/mentor-match">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-atlas" data-repo="qq-chat-atlas" data-stars="0">
+  <div class="project-art has-image"><img src="assets/projects/atlas.png" alt="QQ 画像簿 README 中的聊天关系概览界面" data-en-alt="Conversation overview from the QQ Conversation Atlas README" loading="lazy" decoding="async"><a class="image-credit" href="https://github.com/GPDdev/qq-chat-atlas/blob/main/docs/dashboard.png"><span  data-en="README screenshot ↗">README 截图 ↗</span></a></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">08</span><span  data-en="Local-first analytics">本地数据分析</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="QQ Conversation Atlas">QQ 画像簿</h3><p class="project-description" data-en="Turn chat exports into searchable contact profiles with interaction statistics, combined filters, and optional AI analysis. Data is stored in local SQLite.">把聊天记录整理为可搜索的联系人画像。聚合互动统计、组合筛选与可选 AI 分析，数据存入本地 SQLite。</p><ul class="tags" aria-label="Technologies"><li>Python</li><li>SQLite</li><li>PyWebView</li></ul><div class="project-links"><a href="https://github.com/GPDdev/qq-chat-atlas">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-advisor" data-repo="qq-group-advisor" data-stars="0">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><div class="community"><i></i><i></i><i></i><i></i><i></i><strong>QQ</strong></div><span class="art-title">People.<br>Purpose.<br>Community.</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">09</span><span  data-en="Community operations">社群运营</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="QQ Group Advisor">QQ Group Advisor</h3><p class="project-description" data-en="Plan, govern, and operate QQ communities using authorized data. Develop positioning, promotion, and launch plans grounded in community goals.">为 QQ 社群规划、治理和运营提供帮助。基于授权数据分析目标与现状，产出定位、宣传及冷启动方案。</p><ul class="tags" aria-label="Technologies"><li>Codex Skill</li><li>Python</li><li>QQ</li></ul><div class="project-links"><a href="https://github.com/GPDdev/qq-group-advisor">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-screenanswer" data-repo="screenanswer" data-stars="0">
+  <div class="project-art has-image"><img src="assets/projects/screenanswer.png" alt="框答 README 示例截图，展示演示题目和答案" data-en-alt="ScreenAnswer README screenshot showing a sample question and answer" loading="lazy" decoding="async"><a class="image-credit" href="https://github.com/GPDdev/screenanswer/blob/main/docs/images/main.png"><span  data-en="README screenshot ↗">README 截图 ↗</span></a></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">10</span><span  data-en="Screen study assistant">屏幕答题助手</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="ScreenAnswer">ScreenAnswer 框答</h3><p class="project-description" data-en="Select a question on screen and keep a reference answer nearby. Supports vision models or local OCR, a floating answer window, and your own API.">框选一道题，把解题参考留在手边。支持视觉模型或本地 OCR，在可置顶的小窗中展示答案，API 由你自行配置。</p><ul class="tags" aria-label="Technologies"><li>Windows</li><li>Python</li><li>OCR</li></ul><div class="project-links"><a href="https://github.com/GPDdev/screenanswer">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-stridetune" data-repo="StrideTune" data-stars="0">
+  <div class="project-art has-image"><img src="assets/projects/stridetune.png" alt="随步 README 中的 Android 播放器实际界面" data-en-alt="Actual Android music player interface from the StrideTune README" loading="lazy" decoding="async"><a class="image-credit" href="https://github.com/GPDdev/StrideTune/blob/main/docs/interface.png"><span  data-en="README screenshot ↗">README 截图 ↗</span></a></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">11</span><span  data-en="Running music">跑步音乐</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="StrideTune">StrideTune 随步</h3><p class="project-description" data-en="Let the music follow your pace. Swipe with one finger to adjust playback speed, with local audio and public NetEase playlist imports.">让音乐跟上你的步伐。单指滑动调节播放速度，支持本地音频与网易云公开歌单导入。</p><ul class="tags" aria-label="Technologies"><li>Android</li><li>Java</li><li>Media3</li></ul><div class="project-links"><a href="https://github.com/GPDdev/StrideTune">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-taploop" data-repo="Tongji-TapLoop" data-stars="0">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><div class="loop-mark">∞</div><span class="art-title">TapLoop</span><span class="art-note">Repository created. Story to follow.</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">12</span><span  data-en="Awaiting content">等待内容</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="Tongji TapLoop">Tongji TapLoop</h3><p class="project-description" data-en="The public repository exists, but no project files or description have been uploaded yet. Follow the repository for future updates.">公开仓库已创建，目前尚未上传项目文件或说明。后续进展请以仓库为准。</p><ul class="tags" aria-label="Technologies"><li>Tongji</li><li>Repository</li></ul><div class="project-links"><a href="https://github.com/GPDdev/Tongji-TapLoop">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<article class="project-card theme-faculty" data-repo="University-faculty-information-system-demo-" data-stars="0">
+  <div class="project-art"><div class="drawing" aria-hidden="true"><div class="data-sheet"><div><b>FACULTY</b><span>↗</span></div><p>Affiliation</p><i></i><p>Research</p><i></i><p>Publications</p><i></i></div><span class="art-title">Academic<br>connections.</span></div></div>
+  <div class="project-body"><div class="card-meta"><span class="project-number">13</span><span  data-en="Academic data">学术数据</span><span class="stars" aria-label="0 GitHub stars"><span aria-hidden="true">☆</span> 0</span></div>
+<h3  data-en="University Faculty Information System">全球高校教师信息系统</h3><p class="project-description" data-en="A Python and SQL system for querying faculty affiliations, age, and research output. Developed with funding and data support from the APJIE journal.">使用 Python 爬虫与 SQL 数据库整理高校教师信息，支持工作单位、年龄与科研成果查询。由 APJIE 期刊提供资金和数据支持。</p><ul class="tags" aria-label="Technologies"><li>Python</li><li>SQL</li><li>Data</li></ul><div class="project-links"><a href="https://github.com/GPDdev/University-faculty-information-system-demo-">GitHub <span aria-hidden="true">↗</span></a></div></div>
+</article>
+<!-- projects:end -->
       </div>
     </section>
+    <section class="shell end-note" aria-label="More projects">
+      <p data-en="The next idea is already taking shape.">下一个想法，正在变成现实。</p>
+      <a href="https://github.com/GPDdev"><span data-en="More on GitHub">在 GitHub 看更多</span> <span aria-hidden="true">↗</span></a>
+    </section>
   </main>
-
   <footer class="shell">
-    <span>GPDdev · Open-source projects</span>
-    <a href="https://hachile.org/" data-i18n="back-footer">返回 hachile.org →</a>
+    <span>GPDdev / <span data-en="Made with curiosity.">始于好奇，终于动手。</span></span>
+    <a href="https://hachile.org/" data-en="Back to hachile.org ↑">返回 hachile.org ↑</a>
   </footer>
-  <script>
-    const english = {
-      skip: "Skip to projects",
-      back: "Back to hachile.org",
-      "hero-copy": "A collection of my <strong>development projects, engineering prototypes, and open-source tools</strong>, spanning computer vision, scientific simulation, desktop applications, algorithm design, and local-first data analysis.",
-      "project-intro": "Every card links to a public repository; projects with an online version also include a live site.",
-      "iasr-title": "IASR · Integrated Air Situation Recognition System",
-      "iasr-description": "A video perception and warning prototype for low-altitude scenarios. It uses YOLO for object detection and tracking, derives traffic and visibility metrics, converts bird flocks, intrusions, low visibility, and abnormal parking into unified events, and supports evidence snapshots, dispatch workflows, and CSV / JSON export.",
-      "atlas-title": "QQ Conversation Atlas",
-      "atlas-description": "Turns QQ Chat Exporter records into searchable local profiles with contact aggregation, interaction statistics, combined filters, and optional LLM analysis. Data stays in local SQLite; samples are sent to a selected AI provider only when analysis is explicitly requested.",
-      "advisor-description": "A Codex Skill for planning, governing, and operating QQ communities. Within authorized data, it evaluates group activity and operational goals, recommends whether to create, reshape, merge, or postpone a group, and produces positioning, governance, promotion, and launch plans.",
-      "lithium-description": "A simplified two-dimensional cellular-automata model of lithium dendrite growth. It exposes overpotential, diffusion, SEI uniformity, and anisotropy controls, then exports morphology images, animated GIFs, growth metrics, and CSV data.",
-      "mars-description": "An interactive heat-transfer simulation for insulated Mars-base walls. Cellular automata show how material combinations, heat-source positions, thermal bridges, and cracks affect temperature fields, heat flux, effective thermal resistance, and insulation performance.",
-      "metro-description": "A C++ / Qt Widgets route planner for the Shanghai Metro. Its graph model and modified Dijkstra algorithm prioritize fewer transfers and then fewer stops, with line editing, transfer guidance, and route highlighting.",
-      "materials-description": "An open collection of review materials for Tongji University's Guohao College, including key concepts, knowledge maps, class notes, review outlines, and common mistakes. Materials are for study and should be checked against course texts, lectures, and instructor requirements.",
-      "ghc-title": "Unofficial GHC Chronicle",
-      "ghc-description": "An unofficial digital chronicle of Tongji University's Guohao College, documenting institutional history, campus lore, and shared memories while labeling source confidence and providing verifiable references.",
-      "bronymap-description": "A privacy-first map for My Little Pony fans. The browser reduces selected locations to 10 km or 25 km grid cells before submission, so the server never receives or stores raw coordinates.",
-      "stridetune-description": "An Android music player for running, with one-finger swipe speed control and imports for local audio and public NetEase Cloud Music playlists. Built with a Java interface and the Media3 audio engine.",
-      "livecue-description": "A Windows desktop interview assistant that transcribes system audio and optional microphone input, then uses the user's resume and job details to draft answer points. Optional meeting-screen observation uses APIs configured by the user.",
-      "taploop-description": "The public repository exists, but no project files or description have been uploaded yet. Check the repository for future updates.",
-      "open-demo": "Open Web Demo <span aria-hidden=\"true\">↗</span>",
-      github: "View GitHub <span aria-hidden=\"true\">→</span>",
-      "open-site": "Open site <span aria-hidden=\"true\">↗</span>",
-      "back-footer": "Back to hachile.org →"
-    };
-
-    const toggle = document.querySelector("#lang-toggle");
-    const translated = [...document.querySelectorAll("[data-i18n]")];
-    const chinese = new Map(translated.map((node) => [node, node.innerHTML]));
-    console.assert(translated.every((node) => english[node.dataset.i18n]), "Missing English translation");
-
-    function setLanguage(language) {
-      const isEnglish = language === "en";
-      document.documentElement.lang = isEnglish ? "en" : "zh-CN";
-      translated.forEach((node) => {
-        node.innerHTML = isEnglish ? english[node.dataset.i18n] : chinese.get(node);
-      });
-      toggle.textContent = isEnglish ? "中文" : "EN";
-      toggle.setAttribute("aria-label", isEnglish ? "切换为中文" : "Switch to English");
-      toggle.setAttribute("aria-pressed", String(isEnglish));
-      try { localStorage.setItem("dev-language", language); } catch {}
-    }
-
-    let savedLanguage = "zh-CN";
-    try { savedLanguage = localStorage.getItem("dev-language") || savedLanguage; } catch {}
-    setLanguage(savedLanguage);
-    toggle.addEventListener("click", () => setLanguage(document.documentElement.lang === "en" ? "zh-CN" : "en"));
-  </script>
 </body>
 </html>

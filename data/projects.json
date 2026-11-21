@@ -1,0 +1,308 @@
+[
+  {
+    "repo": "Shanghai-Metro-Planner",
+    "id": "metro",
+    "title": [
+      "上海地铁换乘指南",
+      "Shanghai Metro Planner"
+    ],
+    "kind": [
+      "路线规划",
+      "Route planning"
+    ],
+    "desc": [
+      "少换乘，再少走几站。用图结构和 Dijkstra 算法规划上海地铁路线，支持线路编辑与路径高亮。",
+      "A Shanghai Metro planner that prioritizes fewer transfers, then fewer stops. Includes network editing and highlighted routes."
+    ],
+    "tags": [
+      "C++",
+      "Qt",
+      "Dijkstra"
+    ]
+  },
+  {
+    "repo": "IASR-Integrated-air-situation-recognition-system",
+    "id": "iasr",
+    "title": [
+      "IASR 空中态势识别",
+      "IASR"
+    ],
+    "kind": [
+      "计算机视觉",
+      "Computer vision"
+    ],
+    "desc": [
+      "从视频中的目标检测与跟踪，到交通、能见度与异常事件分析。将现场信息整理成可追溯的事件与证据。",
+      "Video detection and tracking for traffic, visibility, and unusual events. Turns observations into traceable events and evidence."
+    ],
+    "tags": [
+      "Python",
+      "YOLO",
+      "Streamlit"
+    ],
+    "website": "https://iasrcloud.streamlit.app/"
+  },
+  {
+    "repo": "bronymap.org",
+    "id": "bronymap",
+    "title": [
+      "Bronymap",
+      "Bronymap"
+    ],
+    "kind": [
+      "社群地图",
+      "Community map"
+    ],
+    "desc": [
+      "在地图上发现同好，同时保留距离。位置在浏览器内转为 10 km 或 25 km 网格，服务器不接收原始坐标。",
+      "Find fellow pony fans without sharing precise locations. The browser converts locations into 10 km or 25 km grid cells before submission."
+    ],
+    "tags": [
+      "Cloudflare Workers",
+      "D1",
+      "Privacy"
+    ],
+    "website": "https://bronymap.hachile.org/"
+  },
+  {
+    "repo": "ghc.hachile.org",
+    "id": "ghc",
+    "title": [
+      "国豪野史",
+      "Unofficial GHC Chronicle"
+    ],
+    "kind": [
+      "数字档案",
+      "Digital archive"
+    ],
+    "desc": [
+      "记录国豪书院的校园故事与共同记忆。一部持续生长的非官方网络志书，附有来源与史料置信度。",
+      "Campus stories and shared memories from Guohao College. An evolving unofficial chronicle with sources and confidence labels."
+    ],
+    "tags": [
+      "Web",
+      "Archive",
+      "Tongji"
+    ],
+    "website": "https://ghc.hachile.org/",
+    "image": "ghc.png",
+    "imageSource": "docs/banner_3.png",
+    "imageKind": "cover",
+    "alt": [
+      "国豪野史仓库中的校园建筑横幅",
+      "Campus architecture banner from the GHC Chronicle repository"
+    ]
+  },
+  {
+    "repo": "jinke",
+    "id": "jinke",
+    "title": [
+      "今刻",
+      "Jinke"
+    ],
+    "kind": [
+      "随手记录",
+      "Personal journal"
+    ],
+    "desc": [
+      "打开就能写的 Android 心情记录本。自动保存草稿，文字留在本机 SQLite，支持导出 TXT、Markdown 与 JSON。",
+      "An Android journal that opens ready to write. Saves drafts locally in SQLite and exports entries as TXT, Markdown, or JSON."
+    ],
+    "tags": [
+      "Android",
+      "Java",
+      "SQLite"
+    ]
+  },
+  {
+    "repo": "LiveCue",
+    "id": "livecue",
+    "title": [
+      "LiveCue 临场",
+      "LiveCue"
+    ],
+    "kind": [
+      "表达辅助",
+      "Interview assistant"
+    ],
+    "desc": [
+      "结合简历与岗位资料，把会议语音转为文字和回答要点。支持可选画面观察，使用你自己配置的 AI API。",
+      "Turns meeting audio into transcripts and answer points grounded in your resume and role. Optional screen context; bring your own AI API."
+    ],
+    "tags": [
+      "Windows",
+      "Electron",
+      "Speech to text"
+    ],
+    "image": "livecue.png",
+    "imageSource": "docs/images/workspace.png",
+    "alt": [
+      "LiveCue README 工作台截图，使用本地示例数据",
+      "LiveCue README workspace screenshot with local sample data"
+    ]
+  },
+  {
+    "repo": "mentor-match",
+    "id": "mentor",
+    "title": [
+      "Mentor Match",
+      "Mentor Match"
+    ],
+    "kind": [
+      "研究机会匹配",
+      "Research matching"
+    ],
+    "desc": [
+      "基于可核验证据寻找导师、实验室与研究机会。支持比较候选、生成申请准备材料，以及跟进已保存的名单。",
+      "Find and compare supervisors, labs, and research opportunities using verifiable evidence. Prepare application materials and monitor saved shortlists."
+    ],
+    "tags": [
+      "Agent Skill",
+      "Python",
+      "Research"
+    ]
+  },
+  {
+    "repo": "qq-chat-atlas",
+    "id": "atlas",
+    "title": [
+      "QQ 画像簿",
+      "QQ Conversation Atlas"
+    ],
+    "kind": [
+      "本地数据分析",
+      "Local-first analytics"
+    ],
+    "desc": [
+      "把聊天记录整理为可搜索的联系人画像。聚合互动统计、组合筛选与可选 AI 分析，数据存入本地 SQLite。",
+      "Turn chat exports into searchable contact profiles with interaction statistics, combined filters, and optional AI analysis. Data is stored in local SQLite."
+    ],
+    "tags": [
+      "Python",
+      "SQLite",
+      "PyWebView"
+    ],
+    "image": "atlas.png",
+    "imageSource": "docs/dashboard.png",
+    "alt": [
+      "QQ 画像簿 README 中的聊天关系概览界面",
+      "Conversation overview from the QQ Conversation Atlas README"
+    ]
+  },
+  {
+    "repo": "qq-group-advisor",
+    "id": "advisor",
+    "title": [
+      "QQ Group Advisor",
+      "QQ Group Advisor"
+    ],
+    "kind": [
+      "社群运营",
+      "Community operations"
+    ],
+    "desc": [
+      "为 QQ 社群规划、治理和运营提供帮助。基于授权数据分析目标与现状，产出定位、宣传及冷启动方案。",
+      "Plan, govern, and operate QQ communities using authorized data. Develop positioning, promotion, and launch plans grounded in community goals."
+    ],
+    "tags": [
+      "Codex Skill",
+      "Python",
+      "QQ"
+    ]
+  },
+  {
+    "repo": "screenanswer",
+    "id": "screenanswer",
+    "title": [
+      "ScreenAnswer 框答",
+      "ScreenAnswer"
+    ],
+    "kind": [
+      "屏幕答题助手",
+      "Screen study assistant"
+    ],
+    "desc": [
+      "框选一道题，把解题参考留在手边。支持视觉模型或本地 OCR，在可置顶的小窗中展示答案，API 由你自行配置。",
+      "Select a question on screen and keep a reference answer nearby. Supports vision models or local OCR, a floating answer window, and your own API."
+    ],
+    "tags": [
+      "Windows",
+      "Python",
+      "OCR"
+    ],
+    "image": "screenanswer.png",
+    "imageSource": "docs/images/main.png",
+    "alt": [
+      "框答 README 示例截图，展示演示题目和答案",
+      "ScreenAnswer README screenshot showing a sample question and answer"
+    ]
+  },
+  {
+    "repo": "StrideTune",
+    "id": "stridetune",
+    "title": [
+      "StrideTune 随步",
+      "StrideTune"
+    ],
+    "kind": [
+      "跑步音乐",
+      "Running music"
+    ],
+    "desc": [
+      "让音乐跟上你的步伐。单指滑动调节播放速度，支持本地音频与网易云公开歌单导入。",
+      "Let the music follow your pace. Swipe with one finger to adjust playback speed, with local audio and public NetEase playlist imports."
+    ],
+    "tags": [
+      "Android",
+      "Java",
+      "Media3"
+    ],
+    "image": "stridetune.png",
+    "imageSource": "docs/interface.png",
+    "alt": [
+      "随步 README 中的 Android 播放器实际界面",
+      "Actual Android music player interface from the StrideTune README"
+    ]
+  },
+  {
+    "repo": "Tongji-TapLoop",
+    "id": "taploop",
+    "title": [
+      "Tongji TapLoop",
+      "Tongji TapLoop"
+    ],
+    "kind": [
+      "等待内容",
+      "Awaiting content"
+    ],
+    "desc": [
+      "公开仓库已创建，目前尚未上传项目文件或说明。后续进展请以仓库为准。",
+      "The public repository exists, but no project files or description have been uploaded yet. Follow the repository for future updates."
+    ],
+    "tags": [
+      "Tongji",
+      "Repository"
+    ]
+  },
+  {
+    "repo": "University-faculty-information-system-demo-",
+    "id": "faculty",
+    "title": [
+      "全球高校教师信息系统",
+      "University Faculty Information System"
+    ],
+    "kind": [
+      "学术数据",
+      "Academic data"
+    ],
+    "desc": [
+      "使用 Python 爬虫与 SQL 数据库整理高校教师信息，支持工作单位、年龄与科研成果查询。由 APJIE 期刊提供资金和数据支持。",
+      "A Python and SQL system for querying faculty affiliations, age, and research output. Developed with funding and data support from the APJIE journal."
+    ],
+    "tags": [
+      "Python",
+      "SQL",
+      "Data"
+    ]
+  }
+]
