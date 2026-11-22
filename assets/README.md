@@ -9,5 +9,6 @@
 | projects/atlas.png | [源文件](https://github.com/GPDdev/qq-chat-atlas/blob/main/docs/dashboard.png) |
 | projects/screenanswer.png | [源文件](https://github.com/GPDdev/screenanswer/blob/main/docs/images/main.png) |
 | projects/stridetune.png | [源文件](https://github.com/GPDdev/StrideTune/blob/main/docs/interface.png) |
+| projects/taploop.png | [源文件](https://github.com/GPDdev/Tongji-TapLoop/blob/main/docs/images/home-android16.png) |
 
 其余封面由站点 CSS / SVG 绘制，表现项目主题，不代表实际软件界面。图像按需加载，页面不依赖外部图片服务器。

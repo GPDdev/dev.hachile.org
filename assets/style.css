@@ -109,9 +109,7 @@ h3 { margin:10px 0; font-size:clamp(1.25rem,2vw,1.65rem); font-weight:650; line-
 .theme-stridetune { --art-bg:#d4e2aa; }.theme-stridetune img { width:42%; height:auto; left:29%; top:22px; border-radius:19px; box-shadow:0 16px 40px #37522740; transform:rotate(6deg); }
 .theme-stridetune .project-art::before,.theme-stridetune .project-art::after { content:""; position:absolute; border:1px solid #9eb37866; border-radius:50%; inset:-90px 10px; transform:rotate(-30deg); }
 .theme-stridetune .project-art::after { inset:-50px 50px; }
-.theme-taploop { --art-bg:#d7e3e6; }.theme-taploop .drawing { color:#526c78; }
-.loop-mark { position:absolute; top:-20px; right:38px; font:300px/1 Georgia,serif; color:#9cb7bf; transform:rotate(-20deg); }
-.theme-taploop .art-title { top:auto; bottom:65px; font-size:2.3rem; }
+.theme-taploop { --art-bg:#cedaeb; }.theme-taploop img { width:49%; height:auto; left:25.5%; top:22px; border-radius:12px; box-shadow:0 16px 40px #36557033; }
 .theme-faculty { --art-bg:#cfdce6; }.theme-faculty .drawing { color:#3e5d74; }
 .theme-faculty .art-title { font-size:2.1rem; top:auto; bottom:30px; z-index:1; }
 .data-sheet { position:absolute; width:230px; height:280px; right:20px; top:25px; transform:rotate(8deg); background:#edf2f5; border:1px solid #a4bbcb; border-radius:5px; padding:22px; box-shadow:8px 8px 0 #a4bbcb55; }

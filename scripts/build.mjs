@@ -29,7 +29,6 @@ const drawings = {
   jinke: '<div class="journal-sheet"><span>今刻</span><p>把这一刻，<br>留给自己。</p><i></i><i></i><i></i></div><span class="art-note">A little space for now.</span>',
   mentor: '<div class="match-path"><span>YOU</span><i></i><span>RESEARCH</span><i></i><span>MENTOR</span></div><span class="art-title">Find your<br>next chapter.</span><span class="art-note">Evidence before inference.</span>',
   advisor: '<div class="community"><i></i><i></i><i></i><i></i><i></i><strong>QQ</strong></div><span class="art-title">People.<br>Purpose.<br>Community.</span>',
-  taploop: '<div class="loop-mark">∞</div><span class="art-title">TapLoop</span><span class="art-note">Repository created. Story to follow.</span>',
   faculty: '<div class="data-sheet"><div><b>FACULTY</b><span>↗</span></div><p>Affiliation</p><i></i><p>Research</p><i></i><p>Publications</p><i></i></div><span class="art-title">Academic<br>connections.</span>'
 };
 

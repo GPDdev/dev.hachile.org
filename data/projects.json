@@ -268,20 +268,27 @@
     "repo": "Tongji-TapLoop",
     "id": "taploop",
     "title": [
-      "Tongji TapLoop",
+      "Tongji TapLoop 轻循",
       "Tongji TapLoop"
     ],
     "kind": [
-      "等待内容",
-      "Awaiting content"
+      "Android 点击辅助",
+      "Android tap assistant"
     ],
     "desc": [
-      "公开仓库已创建，目前尚未上传项目文件或说明。后续进展请以仓库为准。",
-      "The public repository exists, but no project files or description have been uploaded yet. Follow the repository for future updates."
+      "离线运行的 Android 多步骤点击辅助工具。支持坐标取点、按住与等待时长设置、有限次数循环，以及可见的开始和停止控制。",
+      "An offline Android assistant for multi-step tap sequences. Pick coordinates, set hold and wait times, and run a finite number of loops with visible start and stop controls."
     ],
     "tags": [
-      "Tongji",
-      "Repository"
+      "Android",
+      "Java",
+      "AccessibilityService"
+    ],
+    "image": "taploop.png",
+    "imageSource": "docs/images/home-android16.png",
+    "alt": [
+      "Tongji TapLoop README 中的 Android 主界面，0.1.0 安装包显示初始名称轻点助手",
+      "Android interface from the Tongji TapLoop README; version 0.1.0 shows its initial name, Light Tap Assistant"
     ]
   },
   {
