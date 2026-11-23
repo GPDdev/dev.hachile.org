@@ -1,18 +1,19 @@
 {
-  "checkedAt": "2026-11-22T11:15:50.377Z",
+  "checkedAt": "2026-11-23T07:06:37.120Z",
   "stars": {
     "Shanghai-Metro-Planner": 2,
     "IASR-Integrated-air-situation-recognition-system": 1,
     "bronymap.org": 0,
     "ghc.hachile.org": 0,
+    "hanhua": 0,
     "jinke": 0,
     "LiveCue": 0,
     "mentor-match": 0,
     "qq-chat-atlas": 0,
     "qq-group-advisor": 0,
     "screenanswer": 0,
-    "StrideTune": 0,
-    "Tongji-TapLoop": 0,
+    "StrideTune": 1,
+    "TongjiTap": 3,
     "University-faculty-information-system-demo-": 0
   }
 }

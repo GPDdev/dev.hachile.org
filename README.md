@@ -1,6 +1,6 @@
 # GPDdev Projects
 
-<div align="center"><img alt="Tests: Node.js" src="https://img.shields.io/badge/tests-node%20--test-315942"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-315942"><img alt="Version: 1.10.15" src="https://img.shields.io/badge/version-1.10.15-bb593d"><img alt="Language: HTML, CSS, JavaScript" src="https://img.shields.io/badge/language-HTML%20%2F%20CSS%20%2F%20JavaScript-586a73"></div>
+<div align="center"><img alt="Tests: Node.js" src="https://img.shields.io/badge/tests-node%20--test-315942"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-315942"><img alt="Version: 1.10.22" src="https://img.shields.io/badge/version-1.10.22-bb593d"><img alt="Language: HTML, CSS, JavaScript" src="https://img.shields.io/badge/language-HTML%20%2F%20CSS%20%2F%20JavaScript-586a73"></div>
 
 [访问网站](https://dev.hachile.org/)
 
@@ -17,7 +17,7 @@
 
 GPDdev 的开发项目展示页，收录软件、工具与实验。支持中文 / English 切换并保存语言偏好。每个项目使用独立的图形封面或仓库截图，提供 GitHub 链接及已有的在线入口。
 
-项目按 GitHub Star 数降序展示，数量相同则按仓库名排序，没有固定置顶。Tongji TapLoop 轻循已补充 Android 多步骤点击辅助功能介绍与实际界面截图。项目功能、下载方式及许可证以各自仓库为准。
+现收录 14 个项目，按 GitHub Star 数降序展示，数量相同则按仓库名排序，没有固定置顶。循济 TongjiTap（原 Tongji-TapLoop）提供 Android 多步骤点击辅助功能介绍与实际界面截图；hanhua 提供游戏与影视汉化介绍、中文实机截图及在线演示入口。项目功能、下载方式及许可证以各自仓库为准。
 
 网站使用原生 HTML、CSS、JavaScript，构建只依赖 Node.js 标准库；无需 npm install，没有浏览器端 GitHub API 请求和第三方字体。
 

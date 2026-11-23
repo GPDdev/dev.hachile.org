@@ -94,6 +94,30 @@
     ]
   },
   {
+    "repo": "hanhua",
+    "id": "hanhua",
+    "title": [
+      "hanhua 游戏与影视汉化",
+      "hanhua"
+    ],
+    "kind": [
+      "Windows 汉化工具",
+      "Windows localization"
+    ],
+    "desc": [
+      "Windows 上的 Codex 汉化技能。生成可还原的游戏补丁与实时中文字幕，为电影、剧集制作保留原声的普通话配音和双语字幕版本。",
+      "A Codex skill for Windows that creates reversible game patches and live Chinese subtitles, plus Mandarin-dubbed films and series with bilingual subtitles and the original audio."
+    ],
+    "tags": ["Python", "Codex", "FFmpeg"],
+    "website": "https://hachile.org/hanhua/",
+    "image": "hanhua.jpg",
+    "imageSource": "docs/demo/the-question-zh.jpg",
+    "alt": [
+      "hanhua 演示：《The Question》的中文剧情与选项实机截图",
+      "hanhua demo: Chinese dialogue and choices in The Question"
+    ]
+  },
+  {
     "repo": "jinke",
     "id": "jinke",
     "title": [
@@ -265,11 +289,11 @@
     ]
   },
   {
-    "repo": "Tongji-TapLoop",
+    "repo": "TongjiTap",
     "id": "taploop",
     "title": [
-      "Tongji TapLoop 轻循",
-      "Tongji TapLoop"
+      "循济 TongjiTap",
+      "TongjiTap"
     ],
     "kind": [
       "Android 点击辅助",
@@ -287,8 +311,8 @@
     "image": "taploop.png",
     "imageSource": "docs/images/home-android16.png",
     "alt": [
-      "Tongji TapLoop README 中的 Android 主界面，0.1.0 安装包显示初始名称轻点助手",
-      "Android interface from the Tongji TapLoop README; version 0.1.0 shows its initial name, Light Tap Assistant"
+      "循济 TongjiTap README 中的 Android 步骤设置界面",
+      "TongjiTap Android sequence settings from its README"
     ]
   },
   {

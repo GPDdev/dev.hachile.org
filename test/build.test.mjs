@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { sortedProjects, fetchStars, renderCard, escapeHTML, root } from '../scripts/build.mjs';
 const projects = JSON.parse(await readFile(root + 'data/projects.json','utf8'));
-test('all 13 unique projects, requested removals, no IASR pin',()=>{
-  assert.equal(projects.length,13);
-  assert.equal(new Set(projects.map(p=>p.repo)).size,13);
-  for (const name of ['screenanswer','mentor-match','jinke','University-faculty-information-system-demo-','Tongji-TapLoop','StrideTune','LiveCue']) assert.ok(projects.some(p=>p.repo===name));
+test('all 14 unique projects, requested removals, no IASR pin',()=>{
+  assert.equal(projects.length,14);
+  assert.equal(new Set(projects.map(p=>p.repo)).size,14);
+  for (const name of ['screenanswer','mentor-match','jinke','University-faculty-information-system-demo-','TongjiTap','StrideTune','LiveCue','hanhua']) assert.ok(projects.some(p=>p.repo===name));
   assert.ok(!projects.some(p=>/Lithium|Mars-Base|GHCollege/.test(p.repo)));
   const sample = [{repo:'IASR'},{repo:'Alpha'},{repo:'Zebra'}];
   assert.deepEqual(sortedProjects(sample,{IASR:1,Alpha:1,Zebra:5}).map(p=>p.repo),['Zebra','Alpha','IASR']);

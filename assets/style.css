@@ -85,6 +85,7 @@ h3 { margin:10px 0; font-size:clamp(1.25rem,2vw,1.65rem); font-weight:650; line-
 .map-grid i:nth-child(3) { top:197px; left:246px; background:#d5b18a; }.map-grid i:nth-child(4) { top:295px; left:148px; }
 .map-grid i:nth-child(5) { top:99px; left:344px; }.map-grid i:nth-child(6) { top:344px; left:295px; background:#8b8aaf; }
 .theme-ghc { --art-bg:#5a4e56; }.theme-ghc img { width:100%; height:100%; object-fit:cover; }
+.theme-hanhua { --art-bg:#e2d9ec; }.theme-hanhua img { width:90%; height:calc(100% - 56px); left:5%; top:20px; border-radius:6px; filter:drop-shadow(0 12px 16px #55456630); }
 .theme-jinke { --art-bg:#e6dbc6; }.theme-jinke .drawing { color:#665743; }
 .journal-sheet { width:230px; height:340px; padding:28px; position:absolute; left:calc(50% - 100px); top:30px; transform:rotate(-7deg); background:#f9f4e9; border:1px solid #cbbfa7; box-shadow:9px 12px 0 #ccbd9f55; }
 .journal-sheet span { font-size:.8rem; }.journal-sheet p { font:1.8rem/1.65 Georgia,"Songti SC","SimSun",serif; }
