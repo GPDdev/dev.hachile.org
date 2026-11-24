@@ -33,7 +33,7 @@ const drawings = {
 };
 
 export function renderCard(project, index, stars) {
-  const {id, repo, title, desc, kind, tags, image, imageSource, imageKind, alt, website} = project;
+  const {id, repo, title, desc, kind, tags, image, imageSource, imageKind, alt, website, qqGroup} = project;
   const url = 'https://github.com/GPDdev/' + repo;
   const visual = image
     ? '<img src="assets/projects/' + escapeHTML(image) + '" alt="' + escapeHTML(alt[0]) + '" data-en-alt="' + escapeHTML(alt[1]) + '" loading="lazy" decoding="async">'
@@ -45,6 +45,7 @@ export function renderCard(project, index, stars) {
     '  <div class="project-body"><div class="card-meta"><span class="project-number">' + String(index + 1).padStart(2,'0') + '</span>' + pair(kind) + '<span class="stars" aria-label="' + stars[repo] + ' GitHub stars"><span aria-hidden="true">☆</span> ' + stars[repo] + '</span></div>\n' +
     pair(title, 'h3') + pair(desc, 'p', 'class="project-description"') +
     '<ul class="tags" aria-label="Technologies">' + tags.map(t=>'<li>'+escapeHTML(t)+'</li>').join('') + '</ul>' +
+    (qqGroup ? '<p class="project-community">' + pair(['QQ 交流群','QQ group']) + '<strong>' + escapeHTML(qqGroup) + '</strong></p>' : '') +
     '<div class="project-links"><a href="' + url + '">GitHub <span aria-hidden="true">↗</span></a>' +
     (website ? '<a href="' + escapeHTML(website) + '">' + pair(['访问网站','Open site']) + ' <span aria-hidden="true">↗</span></a>' : '') + '</div></div>\n</article>';
 }

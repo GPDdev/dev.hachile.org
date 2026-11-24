@@ -52,6 +52,8 @@ h2 { margin:0; font-size:1.5rem; font-weight:600; letter-spacing:-.025em; }
 h3 { margin:10px 0; font-size:clamp(1.25rem,2vw,1.65rem); font-weight:650; line-height:1.35; letter-spacing:-.025em; text-wrap:balance; }
 .project-description { margin:0 0 18px; max-width:62ch; font-size:.9rem; line-height:1.85; color:#5b665f; text-wrap:pretty; }
 .tags { display:flex; flex-wrap:wrap; gap:6px 14px; list-style:none; padding:0; margin:auto 0 20px; font-family:var(--mono); font-size:.65rem; color:var(--muted); }
+.project-community { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; font-size:.8rem; line-height:1.6; color:var(--muted); }
+.project-community strong { color:var(--ink); font-family:var(--mono); font-weight:600; user-select:all; }
 .project-links { display:flex; gap:26px; align-items:center; font-size:.85rem; font-weight:600; }
 .project-links a { display:inline-flex; align-items:center; gap:15px; min-height:44px; border-bottom:1px solid #b6beb3; transition:color .2s,border-color .2s; }
 .project-links a:hover { color:var(--accent); border-color:var(--accent); }
