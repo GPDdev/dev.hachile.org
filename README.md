@@ -1,6 +1,6 @@
 # GPDdev Projects
 
-<div align="center"><img alt="Tests: Node.js" src="https://img.shields.io/badge/tests-node%20--test-315942"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-315942"><img alt="Version: 1.12.1" src="https://img.shields.io/badge/version-1.12.1-bb593d"><img alt="Language: HTML, CSS, JavaScript" src="https://img.shields.io/badge/language-HTML%20%2F%20CSS%20%2F%20JavaScript-586a73"></div>
+<div align="center"><img alt="Tests: Node.js" src="https://img.shields.io/badge/tests-node%20--test-315942"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-315942"><img alt="Version: 1.16.1" src="https://img.shields.io/badge/version-1.16.1-bb593d"><img alt="Language: HTML, CSS, JavaScript" src="https://img.shields.io/badge/language-HTML%20%2F%20CSS%20%2F%20JavaScript-586a73"></div>
 
 [访问网站](https://dev.hachile.org/)
 
@@ -17,7 +17,9 @@
 
 GPDdev 的开发项目展示页，收录软件、工具与实验。支持中文 / English 切换并保存语言偏好。每个项目使用独立的图形封面或仓库截图，提供 GitHub 链接及已有的在线入口。
 
-现收录 14 个项目，按 GitHub Star 数降序展示，数量相同则按仓库名排序，没有固定置顶。循济 TongjiTap（原 Tongji-TapLoop）提供 Android 多步骤点击辅助功能介绍、实际界面截图、[官网入口](https://tap.hachile.org/)和 QQ 交流群号 934139029；hanhua 提供游戏与影视汉化介绍、中文实机截图及在线演示入口。项目功能、下载方式及许可证以各自仓库为准。
+现收录 18 个项目，按 GitHub Star 数降序展示，数量相同则按仓库名排序，没有固定置顶。循济 TongjiTap（原 Tongji-TapLoop）提供 Android 多步骤点击辅助功能介绍、实际界面截图、[官网入口](https://tap.hachile.org/)和 QQ 交流群号 934139029；hanhua 提供游戏与影视汉化介绍、中文实机截图及在线演示入口。项目功能、下载方式及许可证以各自仓库为准。
+
+新增 AI 视频课堂、同济野史、AGI Relay 和序铃 DayChime。课堂介绍以可在本机运行的功能为准；AGI Relay 标注服务器待接入的预览状态；DayChime 展示离线作息、铃声提醒和专注倒计时，以及 README 中的真实界面。照片封面保留原作者、来源和许可。
 
 网站使用原生 HTML、CSS、JavaScript，构建只依赖 Node.js 标准库；无需 npm install，没有浏览器端 GitHub API 请求和第三方字体。
 
@@ -56,7 +58,7 @@ node scripts/build.mjs --refresh
 
 --refresh 会逐个查询公开仓库并更新快照与页面。可通过环境变量 GITHUB_TOKEN 或 GH_TOKEN 使用自己的令牌，避免匿名 API 限额；不要把令牌写入代码或提交到仓库。没有该选项时使用已有快照，可离线构建。
 
-如果任何查询失败、仓库身份不匹配或 Star 数据无效，构建失败，旧快照及线上站点保留，不会把错误记作 0。处理网络、权限或限额问题后重新执行。新增项目需同时提供双语文案和对应封面；移除项目只需从数据中删除并重新构建。
+如果任何查询失败、仓库身份不匹配或 Star 数据无效，构建失败，旧快照及线上站点保留，不会把错误记作 0。处理网络、权限或限额问题后重新执行。新增项目需同时提供双语文案和对应封面；移除项目只需从数据中删除并重新构建。照片可用 imageCredit 提供双语署名、imageCreditUrl 链接到原始来源，许可信息记录在 assets/README.md。
 
 ## 发布
 

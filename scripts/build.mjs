@@ -23,6 +23,7 @@ export async function fetchStars(projects, request = fetch) {
 }
 
 const drawings = {
+  relay: '<svg viewBox="0 0 600 330"><g fill="none" stroke="#9ab5eb" stroke-width="3"><path d="M60 225H280M280 225H390V155H520M390 225H520M390 225V295H520"/><circle cx="60" cy="225" r="13"/><rect x="252" y="197" width="56" height="56" rx="12" fill="#e7eeff"/><circle cx="520" cy="155" r="11"/><circle cx="520" cy="225" r="11"/><circle cx="520" cy="295" r="11"/></g><path d="m268 225 8 8 16-18" fill="none" stroke="#243c7b" stroke-width="4"/></svg><span class="art-title">AGI<br>Relay</span><span class="art-note">One endpoint. Multiple models.</span>',
   metro: '<svg viewBox="0 0 600 330"><g fill="none" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path stroke="#ca4d34" d="M-30 75H175L300 200H630"/><path stroke="#395a4a" d="M60 370V240L240 60H500"/><path stroke="#d5a448" d="M-30 285H180L345 120H630"/></g><g fill="#fbf5e8" stroke="#293e35" stroke-width="4"><circle cx="155" cy="75" r="9"/><circle cx="222" cy="122" r="12"/><circle cx="300" cy="200" r="12"/><circle cx="440" cy="200" r="9"/><circle cx="385" cy="60" r="9"/><circle cx="60" cy="285" r="12"/><circle cx="470" cy="120" r="9"/></g></svg><span class="art-title">SHANGHAI<br>METRO</span><span class="art-note">Routes, connected.</span>',
   iasr: '<div class="radar"><i></i><i></i><i></i><b class="blip b1"></b><b class="blip b2"></b><b class="blip b3"></b></div><span class="art-title">IASR</span><span class="art-note">Perception → events → evidence</span>',
   bronymap: '<div class="map-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="art-title">Near.<br>Never exact.</span><span class="art-note">10 km / 25 km</span>',
@@ -33,13 +34,13 @@ const drawings = {
 };
 
 export function renderCard(project, index, stars) {
-  const {id, repo, title, desc, kind, tags, image, imageSource, imageKind, alt, website, qqGroup} = project;
+  const {id, repo, title, desc, kind, tags, image, imageSource, imageKind, imageCredit, imageCreditUrl, alt, website, qqGroup} = project;
   const url = 'https://github.com/GPDdev/' + repo;
   const visual = image
     ? '<img src="assets/projects/' + escapeHTML(image) + '" alt="' + escapeHTML(alt[0]) + '" data-en-alt="' + escapeHTML(alt[1]) + '" loading="lazy" decoding="async">'
     : drawings[id];
   if (!visual) throw new Error('Missing artwork: ' + id);
-  const caption = image ? '<a class="image-credit" href="' + url + '/blob/main/' + imageSource + '">' + pair(imageKind === 'cover' ? ['项目原图 ↗','Project artwork ↗'] : ['README 截图 ↗','README screenshot ↗']) + '</a>' : '';
+  const caption = image ? '<a class="image-credit" href="' + escapeHTML(imageCreditUrl || url + '/blob/main/' + imageSource) + '">' + pair(imageCredit || (imageKind === 'cover' ? ['项目原图 ↗','Project artwork ↗'] : ['README 截图 ↗','README screenshot ↗'])) + '</a>' : '';
   return '<article class="project-card theme-' + id + '" data-repo="' + escapeHTML(repo) + '" data-stars="' + stars[repo] + '">\n' +
     '  <div class="project-art' + (image ? ' has-image' : '') + '">' + (image ? visual : '<div class="drawing" aria-hidden="true">' + visual + '</div>') + caption + '</div>\n' +
     '  <div class="project-body"><div class="card-meta"><span class="project-number">' + String(index + 1).padStart(2,'0') + '</span>' + pair(kind) + '<span class="stars" aria-label="' + stars[repo] + ' GitHub stars"><span aria-hidden="true">☆</span> ' + stars[repo] + '</span></div>\n' +
@@ -56,7 +57,7 @@ export async function build(refresh = false) {
   for (const p of projects) {
     if (!/^[A-Za-z0-9_.-]+$/.test(p.repo) || !/^[a-z]+$/.test(p.id)) throw new Error('Invalid project identifier');
     for (const field of ['title','kind','desc']) if (!Array.isArray(p[field]) || p[field].length !== 2 || p[field].some(x=>typeof x !== 'string' || !x)) throw new Error('Missing bilingual ' + field + ': ' + p.repo);
-    if (p.website && new URL(p.website).protocol !== 'https:') throw new Error('Expected HTTPS project link');
+    for (const link of [p.website, p.imageCreditUrl].filter(Boolean)) if (new URL(link).protocol !== 'https:') throw new Error('Expected HTTPS project link');
     if (p.image) await access(resolve(root,'assets/projects',p.image));
   }
   const snapshot = refresh ? await fetchStars(projects) : JSON.parse(await readFile(resolve(root,'data/stars.json'),'utf8'));

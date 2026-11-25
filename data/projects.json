@@ -337,5 +337,66 @@
       "SQL",
       "Data"
     ]
+  },
+  {
+    "repo": "learn.hachile.org",
+    "id": "learn",
+    "title": ["AI 视频课堂", "AI Video Classroom"],
+    "kind": ["视频学习", "Video learning"],
+    "desc": [
+      "从学习问题生成课程大纲、中文旁白、示意动画与字幕视频。支持私人课程和社区分享，提供可在本机运行的示例课程。",
+      "Turn a learning question into an outline, Chinese narration, animated diagrams, and subtitled video. Supports private courses and community sharing, with sample lessons you can run locally."
+    ],
+    "tags": ["Cloudflare Workers", "Python", "FFmpeg"],
+    "image": "learn.jpg",
+    "imageSource": "public/media/saturn.jpg",
+    "imageKind": "cover",
+    "imageCredit": ["NASA / JPL / SSI ↗", "NASA / JPL / SSI ↗"],
+    "imageCreditUrl": "https://science.nasa.gov/resource/saturn-four-years-on/",
+    "alt": ["AI 视频课堂示例使用的卡西尼号土星照片", "Cassini photograph of Saturn used in an AI Video Classroom sample lesson"]
+  },
+  {
+    "repo": "tjwild.hachile.org",
+    "id": "tjwild",
+    "title": ["同济野史", "Tongji Wild History"],
+    "kind": ["校园档案", "Campus archive"],
+    "desc": [
+      "查访同济校史与校园轶事，按年代和置信度检索文章。段落附中、英、德文来源，区分史实、回忆与争议。",
+      "A community archive of Tongji history and campus stories. Browse by period and confidence, with paragraph-level Chinese, English, and German sources distinguishing records, recollections, and disputed accounts."
+    ],
+    "tags": ["JavaScript", "Node.js", "Digital history"],
+    "website": "https://tjwild.hachile.org/",
+    "image": "tjwild.webp",
+    "imageSource": "assets/wenyuan.webp",
+    "imageKind": "cover",
+    "imageCredit": ["Qiu Chaofan / CC BY-SA 4.0 ↗", "Qiu Chaofan / CC BY-SA 4.0 ↗"],
+    "imageCreditUrl": "https://commons.wikimedia.org/wiki/File:Wenyuan_Building_Front.jpg",
+    "alt": ["同济大学文远楼正面，摄影 Qiu Chaofan", "Front of Wenyuan Building at Tongji University, photographed by Qiu Chaofan"]
+  },
+  {
+    "repo": "agi.hachile.org",
+    "id": "relay",
+    "title": ["AGI Relay 大模型中转站", "AGI Relay"],
+    "kind": ["模型接入", "Model gateway"],
+    "desc": [
+      "基于 New API 的大模型 API 网关，支持统一接入、令牌管理与流式响应。目前提供接入说明和部署配置，线上页面处于预览阶段，等待服务器接入。",
+      "A model API gateway built on New API, with a shared endpoint, token management, and streaming responses. Connection guides and deployment configuration are available; the website is a preview awaiting a server."
+    ],
+    "tags": ["New API", "Docker", "SSE"],
+    "website": "https://agi.hachile.org/"
+  },
+  {
+    "repo": "DayChime",
+    "id": "daychime",
+    "title": ["序铃 DayChime", "DayChime"],
+    "kind": ["作息与专注", "Schedule and focus"],
+    "desc": [
+      "离线 Android 校园作息应用，将起床、课程与自习安排进每周时间表，按时响铃。支持随课程开始的跨应用专注倒计时，也可单独设置专注时长。",
+      "An offline Android schedule for campus life, with weekly routines and bells for wake-up, classes, and study. Start a focus countdown over other apps when class begins, or set a standalone timer."
+    ],
+    "tags": ["Android", "Java", "Offline"],
+    "image": "daychime.png",
+    "imageSource": "dist/界面预览.png",
+    "alt": ["序铃 DayChime 的今日作息、每周作息和课堂专注倒计时", "DayChime screens showing today's schedule, weekly routines, and the classroom focus countdown"]
   }
 ]

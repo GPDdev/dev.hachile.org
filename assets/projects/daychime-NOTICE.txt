@@ -1,0 +1,9 @@
+DayChime (序铃)
+Copyright 2026 GPDdev and the DayChime contributors.
+
+This repository includes the Gradle Wrapper from Gradle 8.13.
+The wrapper scripts and JAR are distributed under the Apache License,
+Version 2.0. The scripts retain their original copyright notices, and
+the wrapper JAR includes its license in META-INF/LICENSE.
+
+Gradle project: https://github.com/gradle/gradle
