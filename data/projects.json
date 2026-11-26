@@ -398,5 +398,36 @@
     "image": "daychime.png",
     "imageSource": "dist/界面预览.png",
     "alt": ["序铃 DayChime 的今日作息、每周作息和课堂专注倒计时", "DayChime screens showing today's schedule, weekly routines, and the classroom focus countdown"]
+  },
+  {
+    "repo": "events.hachile.org",
+    "id": "events",
+    "title": ["Hachile Events 同济活动日历", "Hachile Events"],
+    "kind": ["校园日历", "Campus calendar"],
+    "desc": [
+      "按学院查找校园活动、竞赛报名与比赛时间，并查看赛事目录和奖学金评审依据。支持关键词筛选、本地收藏和 ICS 日历导出、订阅，条目附原始来源。",
+      "Find campus events, competition deadlines, and contest dates by college, alongside competition catalogs and scholarship criteria. Includes search, local favorites, ICS export and subscriptions, with links to original sources."
+    ],
+    "tags": ["JavaScript", "ICS", "Local storage"],
+    "website": "https://events.hachile.org/",
+    "image": "events.jpg",
+    "imageSource": "index.html",
+    "imageCredit": ["网站截图 ↗", "Website screenshot ↗"],
+    "imageCreditUrl": "https://events.hachile.org/",
+    "alt": ["Hachile Events 网站的学院筛选、月历和日程列表", "Hachile Events website showing college filters, a monthly calendar, and the event schedule"]
+  },
+  {
+    "repo": "BirthdayPost",
+    "id": "birthdaypost",
+    "title": ["生辰邮局 Birthday Post", "Birthday Post"],
+    "kind": ["生日提醒", "Birthday reminders"],
+    "desc": [
+      "从聊天记录整理生日线索与祝福素材，核对后将好友卡传到手机。支持公历、农历生日提醒，在本机编辑并复制个性化祝福，无需账号或 API 密钥。",
+      "Extract birthday clues and greeting details from chat records, review them, and transfer confirmed contact cards to your phone. Supports Gregorian and lunar birthday reminders, with greetings composed locally for editing and copying. No account or API key required."
+    ],
+    "tags": ["Windows", "Android", "iPhone", "JavaScript"],
+    "image": "birthdaypost.png",
+    "imageSource": "docs/images/windows-home.png",
+    "alt": ["生辰邮局 Windows 端的生日总览与月历，未导入好友资料", "Birthday Post on Windows showing the birthday overview and calendar before importing contacts"]
   }
 ]

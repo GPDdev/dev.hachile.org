@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { sortedProjects, fetchStars, renderCard, escapeHTML, root } from '../scripts/build.mjs';
 const projects = JSON.parse(await readFile(root + 'data/projects.json','utf8'));
-test('all 18 unique projects, requested removals, no IASR pin',()=>{
-  assert.equal(projects.length,18);
-  assert.equal(new Set(projects.map(p=>p.repo)).size,18);
-  for (const name of ['screenanswer','mentor-match','jinke','University-faculty-information-system-demo-','TongjiTap','StrideTune','LiveCue','hanhua','learn.hachile.org','tjwild.hachile.org','agi.hachile.org','DayChime']) assert.ok(projects.some(p=>p.repo===name));
+test('all 20 unique projects, requested removals, no IASR pin',()=>{
+  assert.equal(projects.length,20);
+  assert.equal(new Set(projects.map(p=>p.repo)).size,20);
+  for (const name of ['screenanswer','mentor-match','jinke','University-faculty-information-system-demo-','TongjiTap','StrideTune','LiveCue','hanhua','learn.hachile.org','tjwild.hachile.org','agi.hachile.org','DayChime','events.hachile.org','BirthdayPost']) assert.ok(projects.some(p=>p.repo===name));
   assert.ok(!projects.some(p=>/Lithium|Mars-Base|GHCollege/.test(p.repo)));
   const sample = [{repo:'IASR'},{repo:'Alpha'},{repo:'Zebra'}];
   assert.deepEqual(sortedProjects(sample,{IASR:1,Alpha:1,Zebra:5}).map(p=>p.repo),['Zebra','Alpha','IASR']);

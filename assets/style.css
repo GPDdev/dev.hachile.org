@@ -117,6 +117,8 @@ h3 { margin:10px 0; font-size:clamp(1.25rem,2vw,1.65rem); font-weight:650; line-
 .theme-tjwild { --art-bg:#d7dfd0; }.theme-tjwild img { width:100%; height:100%; object-fit:cover; object-position:50% 62%; }
 .theme-relay { --art-bg:#243c7b; }.theme-relay .drawing { color:#edf3ff; }.theme-relay svg { width:100%; height:100%; }.theme-relay .art-title { font-size:2.6rem; letter-spacing:-.025em; }
 .theme-daychime { --art-bg:#e6e5de; }.theme-daychime img { width:calc(100% - 32px); height:calc(100% - 32px); left:16px; top:16px; object-fit:contain; }
+.theme-events { --art-bg:#d9e5e3; }.theme-events img { width:calc(100% - 32px); height:calc(100% - 32px); left:16px; top:16px; object-fit:contain; }
+.theme-birthdaypost { --art-bg:#edd7cc; }.theme-birthdaypost img { width:calc(100% - 40px); height:calc(100% - 40px); left:20px; top:20px; object-fit:contain; }
 .theme-faculty { --art-bg:#cfdce6; }.theme-faculty .drawing { color:#3e5d74; }
 .theme-faculty .art-title { font-size:2.1rem; top:auto; bottom:30px; z-index:1; }
 .data-sheet { position:absolute; width:230px; height:280px; right:20px; top:25px; transform:rotate(8deg); background:#edf2f5; border:1px solid #a4bbcb; border-radius:5px; padding:22px; box-shadow:8px 8px 0 #a4bbcb55; }

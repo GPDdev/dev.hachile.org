@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25T15:22:30.944Z",
+  "checkedAt": "2026-11-26T02:23:40.859Z",
   "stars": {
     "Shanghai-Metro-Planner": 2,
     "IASR-Integrated-air-situation-recognition-system": 1,
@@ -18,6 +18,8 @@
     "learn.hachile.org": 0,
     "tjwild.hachile.org": 0,
     "agi.hachile.org": 0,
-    "DayChime": 0
+    "DayChime": 0,
+    "events.hachile.org": 0,
+    "BirthdayPost": 0
   }
 }
